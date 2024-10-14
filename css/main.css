@@ -47,6 +47,8 @@ div.explanation, div.requirements, div.benefits, div.participation{
     width: var(--page-width-position);
     top: var(--page-top-position);
     background-image: url(../img/newspaper3.jpg);
+    transition: all 4s ease-in-out;
+
 }
 
 div.explanation{
@@ -81,6 +83,9 @@ section.intro{
     padding: 2%;
     border: 5px dashed rgb(15, 126, 76);
     margin-left: 10px;
+    transform: rotate(-10deg) translate(-100px);
+    transition: all 2s ease-in-out;
+
 
 }
 
@@ -101,6 +106,7 @@ div.extra1{
     height: 80%;
     background-image: url(../img/newspaper2.jpg);
     z-index: -1;
+    transform: rotate(10) translate(100px);
 }
 
 /* create tabs for folder**/
@@ -108,6 +114,7 @@ div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
     margin-top: -17px;
     width: 10vw;
     background-color: antiquewhite;
+
 }
 
 
@@ -147,3 +154,131 @@ li{
 #zen-resources{
     visibility: hidden;
 }
+
+/* 04, selector practice, transform, transition*/
+a:hover{
+    font: size 1.5em;
+}
+
+div.explanation:active{
+    top:15vh;
+    height: 90vh;
+
+}
+
+div.requirements:active{
+    top:15vh;
+    height: 90vh;
+}
+
+div.benefits:active{
+    top:15vh;
+    height: 90vh;
+}
+
+div.participation:active{
+    top:15vh;
+    height: 90vh;
+}
+
+p::first-letter{
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+p:nth-child(2n):{
+    font-style: oblique;
+}
+
+p:nth-child(2n+1){
+    background-color: rgb(193, 223, 240);
+}
+li:first-of-type{
+    font-size: larger;
+}
+
+h3{
+    text-shadow: 1px 1px black;
+}
+div.explanation h3, div.requirements h3, div.benefits h3, div.participation h3{
+    border-top: solid red 1px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+/** list style image */
+ul{
+    list-style-image: url(../img/star.png);
+}
+
+section.intro h3.hover ~p{
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+@keyframes backandforth{
+    from{ transform: translate{-500px,0}}
+    40%{ transform: translate{-300px,0}}
+    60%{ transform: translate{-500px,0}}
+    80%{ transform: translate{-600px,0}}
+
+
+}
+
+footer{
+    position:fixed;
+    bottom: 1vh;
+    left: 50%;
+    z-index: -1;
+    animation: 10s ease-in-out 2s alternate infinite backandforth;
+}
+
+aside.sidebar{
+    clip-path: polygon(0 0, 0 90%,50% 790%, 100% 60%, 100% 0%);
+}
+
+div{
+    background-color:  hsla(200,50%,70%,0.3);
+  }
+  
+  .wrapper {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100px  repeat(2, 1fr) 100px;
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  
+  .one{
+    grid-column: 2/4;
+    grid-row: 2/4;
+  }
+  
+  .two{
+    grid-column: 1/ 4;
+    grid-row: 1/2;
+  }
+  
+  .three{
+    grid-gap
+    grid-column: 1/4;
+    grid-row: 2/4;
+  }
+  
+  .four{
+    grid-column: 4/4;
+    grid-row: 1/3;
+      
+  }
+  
+  .five{
+    grid-column: 1/4;
+    grid-row: 4/4;
+  }
+  
+  .six{
+    z-index: 1;
+    grid-column: 3/5;
+    grid-row: 3/5;
+  }
